@@ -1,3 +1,4 @@
+-----------------------------------------------------1. positive or negative-------------------------
 #include <iostream>
 using namespace std;
 int main() {
@@ -17,3 +18,102 @@ int main() {
     }
     return 0;
 }
+
+------------------- ------------------2. even or odd----------------------------------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int x;
+    cin>>x;
+    if(x%2==0)
+       cout<<"no. is even";
+    else
+       cout<<"no. is odd";
+    return 0;
+}
+
+-------------------------------------3.sum of n natural number-----------------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int x,sum;
+    cin>>x;
+    sum=x*(x+1)/2;
+    cout<<"sum of "<<x<<" natural number is: "<<sum;
+    return 0;
+}
+---------------------------------------4.sum in range----------------------------------------------
+by arithmetic formula
+#include <iostream>
+using namespace std;
+int main() {
+    int x,y,sum;
+    cout<<"enter the value of start number ";
+    cin>>x;
+    cout<<"enter the value of last number ";
+    cin>>y;
+    int n=y-x+1;
+    sum=n*((2*x)+n-1)/2;
+    cout<<sum;    
+    return 0;
+}
+
+----------------------------------------------5.greaterin 2 number------------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int x,y,greater;
+    cin>>x>>y;
+    if(x==y)
+         cout<<"equal";
+    else
+        greater=x>y?x:y;
+        cout<<greater<<" is greater";
+    return 0;
+}
+---------------------------------------------6. greater in 3 number-------------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int x,y,z,greater;
+    cin>>x>>y>>z;
+    if(x==y==z)
+        cout<<"equal";
+    else
+        greater=z>(x>y?x:y)?z:(x>y?x:y);
+    cout<<greater<<" is greater";
+    return 0;
+}
+
+-----------------------------------------------7.leap year------------------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int year;
+    cin>>year;
+    if(year%400==0)
+        cout<<"leap year";
+    else if(year%4==0 && year%100!=0)
+        cout<<"leap year";
+    else
+        cout<<"not a leap year";
+    return 0;
+}
+-------------------------------------------------8.prime number-------------------------
+#include <iostream>
+using namespace std;
+int main() {
+    int p,i,count=0;
+    cin>>p;
+    for(i=1;i<=p;i++)
+    {
+        if(p%i==0)
+            count+= 1;
+    }
+    if(count<=2)
+         cout<<p<<" is a prime number";
+    else
+        cout<<p<<" not a prime number";
+    return 0;
+}
+----------------------------------------------9. prime in range-----------------------
