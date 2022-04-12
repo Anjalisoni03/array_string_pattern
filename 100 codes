@@ -117,3 +117,112 @@ int main() {
     return 0;
 }
 ----------------------------------------------9. prime in range-----------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int l,u;
+    cin>>l>>u;
+    for(int i=l;i<u;i++)
+    {
+        if(i==2)
+        {
+            cout<<i<<" ";
+            continue;
+        }
+        for(int j=2;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                break;
+            }
+            else if(i==j+1)
+            {
+                cout<<i<<" ";
+            }
+        }
+    }
+    return 0;
+}
+---------------------------------------10.sum  of digits---------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int x,r,sum=0; 
+    cin>>x;
+    while(x>0)
+    {
+        r=x%10;
+        sum+= r;
+        x=x/10;
+    }
+    cout<<sum;
+    return 0;
+}
+---------------------------------------11. reverse of number--------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int x,r,rev=0; 
+    cin>>x;
+    while(x>0)
+    {
+        r=x%10;
+        rev=rev*10+r;
+        x=x/10;
+    }
+    cout<<rev;
+    return 0;
+}
+-------------------------------12.palindrome------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int temp,x,r,rev=0; 
+    cin>>x;
+    temp=x;
+    while(x>0)
+    {
+        r=x%10;
+        rev=rev*10+r;
+        x/= 10;
+    }
+    if(temp==rev)
+    {
+        cout<<temp<<" is palindrome";
+    }
+    else
+        cout<<temp<<" is not palindrome";
+    return 0;
+}
+-------------------------------------13.armstrong number-----------------------------
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int x,sum=0,temp,digit,len=0;
+    cin>>x;
+    int y=x;
+    temp=x;
+    while(x)
+    {
+        len++;
+        x/= 10;
+    }
+    cout<<len<<endl;
+    while(temp>0)
+    {
+        digit=temp%10;
+        sum=sum+pow(digit,len);
+        temp /= 10;
+    }
+    if(y==sum)
+        cout<<y<<" is armstrong";
+    else
+        cout<<y<<" is not armstrong";
+    return 0;
+}
