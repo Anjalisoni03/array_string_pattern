@@ -226,3 +226,111 @@ int main()
         cout<<y<<" is not armstrong";
     return 0;
 }
+
+-------------------------------------------------14. armstrong in range--------------------------
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int l=0,u=1000,i,digit;
+    for(i=l;i<=u;i++)
+    {
+        int y=i, sum=0,x=i,len=0;
+        while(x!=0)
+        {
+            len++;
+            x/= 10;
+        }
+        //cout<<len<<endl;
+         while(y!=0)
+        {
+            digit=y%10;
+            y /= 10;
+            sum+= pow(digit,len);
+            
+        }
+        if(i==sum)
+            cout<<i<<" ";
+    }
+    return 0;
+}
+-------------------------------------------------15.fibonnaci number---------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int fib[n];
+    fib[0]=0;
+    fib[1]=1;
+    cout << fib[0] << ", " << fib[1] <<", ";
+    for(int i=2;i<n;i++)
+    {   
+        fib[i]=fib[i-1]+fib[i-2];
+        cout<<fib[i]<<", ";
+    }
+    return 0;
+}
+-------------------------------------------------------16.nth term of fibonnaci------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int fib[n+1];
+    fib[0]=0;
+    fib[1]=1;
+    for(int i=2;i<=n;i++)
+    {   
+        fib[i]=fib[i-1]+fib[i-2];
+    }
+    cout<<fib[n];
+    return 0;
+}
+-------------------------------------------------17.factorial of a number--------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int fac,i;
+    cin>>fac;
+    for(i=fac-1;i>0;i--)
+    {
+        fac=fac*i;
+    }
+    cout<<fac;
+    return 0;
+}
+------------------------------------------------18.power(not works on interger, negative, decimal)--------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int b,e,res=1.0;
+    cin>>b>>e;
+    for(int i=0;i<e;i++)
+    {
+        res*= b;
+    }
+    cout<<res;
+    return 0;
+}
+-----------------------------------------------------19.factor-----------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,i;
+    cin>>n;
+    for(i=1;i<n+1;i++)
+    {
+        if(n%i==0)
+        {
+            cout<<i<<" ";
+        }
+    }
+    return 0;
+}
