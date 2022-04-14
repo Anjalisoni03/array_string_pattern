@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 
--------------------------------------3.sum of n natural number-----------------------------------
+-------------------------------------3.sum of n natural number----------------------------------
 #include <iostream>
 using namespace std;
 int main() {
