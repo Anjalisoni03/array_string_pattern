@@ -1,141 +1,56 @@
------------------------------------21. perfect number (whose sum of factors except itself is number itself)------------------------- 
-#include<iostream>
-using namespace std;
-int main()
-{
-    int num,i,r,sum=0;
-    cin>>num;
-    int x=num;
-    for(int i=1;i<x;i++)
-    {
-        if(x%i==0)
-            sum+= i;
-    }
-    if (sum==num)
-        cout<<num<<" is a perfect number";
-    else
-        cout<<num<<" not a perfect number";
-    return 0;
-}
-------------------------------------22. automorphic number--------------------------------------------
-end of number and square is same 5 - 25, 76 -5776
-#include<iostream>
-using namespace std;
-int automorphic(int num)
-{
-    int sq;
-    sq=num*num;
-    
-    while(num>0)
-    {
-        if(num%10!=sq%10)
-            return 0;
-        num /=10;
-        sq/= 10;
-    }
-    return 1;
-}
-int main()
-{
-    int num,s;
-    cin>>num;
-    s=num*num;
-    if (automorphic(num))
-        cout<<num<<" whose square is "<<s<<" is a automorphic number";
-    else
-        cout<<num<<" whose square is "<<s<<" is not a automorphic number";
-
-}
--------------------------------------------------23.harshad number--------------------------
-number is divisible by sum of its values. ex. 153 =1+5+3=9 and 153%9=0
-#include<iostream>
-using namespace std;
-void harshad(int num)
-{
-    int r,x,sum=0;
-    x=num;
-    while(x>0)
-    {
-        r=x%10;
-        sum+= r;
-        x/= 10;
-    }
-    if(x%num==0)
-        cout<<num<<" is a harshad number";
-    else
-        cout<<num<<" is a not harshad number";
-}
-int main()
-{
-    int num;
-    cin>>num;
-    harshad(num);
-}
-----------------------------------------24.abudant number-----------------------------------
-sum of factors is greater than original number ex. 12= 1,2,3,4,6=16 and 16>12
-#include<iostream>
-using namespace std;
-void abudant(int num)
-{
-    int x,sum=0;
-    x=num;
-    for(int i=1;i<x;i++)
-    {
-        if(x%i==0)
-            sum+=i;
-    }
-    if(sum>num)
-        cout<<num<<" is a abudant number";
-    else
-        cout<<num<<" is not a abudant number";
-}
-int main()
-{
-    int num;
-    cin>>num;
-    abudant(num);
-}
-----------------------------------------25.friendly pair---------------------------------
-Two numbers num1 & num2 are friendly pairs if the following holds true - (Sum of divisors of num1)/num1= (Sum of divisors of num2)/num2
-#include<iostream>
-using namespace std;
-int sum_div(int n)
-{
-    int x,sum=0;
-    x=n;
-    for(int i=1;i<x;i++)
-    {
-        if(x%i==0)
-            sum+=i;
-    }
-    return sum;
-}
-void friendly_pair(int num1,int num2)
-{
-    if(sum_div(num1)/num1==sum_div(num2)/num2)
-        cout<<num1<<" and "<<num2<<" is a friendly pair";
-    else
-        cout<<num1<<" and "<<num2<<" is not a friendly pair";
-}
-int main()
-{
-    int num1,num2;
-    cin>>num1>>num2;
-    friendly_pair(num1,num2);
-}
-
 ---------------------------------------------------------26. largest in array-------------------------
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
     int arr[]={14,78,11,23,76};
     int n=sizeof(arr)/sizeof(arr[0]);
-    int max;
+    int max=INT_MN;
     for(int i=0;i<=n;i++)
     {
-        if(arr[i]>arr[i+1])
+        if(arr[i]>max)
             max=arr[i];
     }
     cout<<max;
 }
+---------------------------------------------------27.smallest array----------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={14,78,11,23,76};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int min=INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]<min)
+            min=arr[i];
+    }
+    cout<<min;
+}
+------------------------------------------28.second smallest-----------------------
+
+------------------------------------------------29.largest and smallest both----------
+
+-----------------------------------------------30.sum of elements of array-----------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={14,78,11,23,76},sum=0;
+    int n=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n;i++)
+        sum +=arr[i];
+    cout<<sum;
+}
+-------------------------------------------31. reverse of array---------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={14,78,11,23,76},sum=0;
+    int n=sizeof(arr)/sizeof(arr[0]);
+    for(int i=n-1;i>=0;i--)
+        cout<<arr[i]<<" ";
+}
+------------------------------------------------32.
