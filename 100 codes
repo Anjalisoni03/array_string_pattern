@@ -334,3 +334,62 @@ int main()
     }
     return 0;
 }
+
+#include<bits/stdc++.h>
+using namespace std;
+void factors(int num)
+{
+    int i,flag= false;
+    for(i=1;i<=sqrt(num);i++)
+    {
+        if(num%i==0)
+            cout<<i<<" ";
+        if(i==num/i)
+            flag=true;
+    }
+    if(flag) 
+        i -= 2; 
+    for(;i>=1;i--)
+    {
+        if (num % i == 0)
+            cout << num/i << " ";
+    }
+}
+int main()
+{
+    int num;
+    cin>>num;
+    factors(num);
+}
+
+-----------------------------------20.strong number-------------------------
+whose addition of each number's factorial is same as number 145 = 1! +4! +5! =145
+#include<bits/stdc++.h>
+using namespace std;
+int fac(int r)
+{   int f=r;
+    for(int i=r-1;i>0;i--)
+        f=f*i;
+    return f;
+}
+void strong(int num)
+{
+    int r, s=0, x;
+    x=num;
+    while(x>0)
+    {
+        r=x%10;
+        s+= fac(r);
+        x/=10;
+    }
+    if(s==num)
+        cout<<num<<" is a strong number";
+    else
+        cout<<num<<" is not a strong number";
+}
+int main()
+{
+    int num;
+    cin>>num;
+    strong(num);
+}
