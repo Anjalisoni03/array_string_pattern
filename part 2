@@ -53,4 +53,84 @@ int main()
     for(int i=n-1;i>=0;i--)
         cout<<arr[i]<<" ";
 }
-------------------------------------------------32.
+------------------------------------------------32.half in ascending and half in descending---------------------------------
+#include<iostream>
+using namespace std;
+void sort(int arr[], int n)
+{
+    int temp;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+            if(arr[i]>arr[j])
+            {                         //swapping for sorting
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+    }
+    for(int k=0;k<n/2;k++)
+        cout<<arr[k]<<" ";
+    for(int s=n-1;s>=n/2;s--)
+        cout<<arr[s]<<" ";
+}
+int main()
+{
+    int arr[]={4,6,9,3,2,1,0}, n;
+    n=sizeof(arr)/sizeof(arr[0]);
+    sort(arr,n);
+}
+-----------------------------------------------------33.frequency of array elements-----------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,j,count;
+    int a[] = {10,30,10,20,10,20,30,10};
+    int n = sizeof(a) / sizeof(a[0]);
+    int visited[n];
+    for(i=0;i<n;i++)
+    {
+        if(visited[i]!=1)
+        {
+            count=1;
+            for(j=i+1;j<n;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    count++;
+                    visited[j]=1;
+                }
+            }
+            cout<<a[i]<<" : "<<count<<" times"<<endl;
+        }
+    }
+    return 0;
+}
+
+//by using sort function
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a[] = {10,30,10,20,10,20,30,10};
+    int n = sizeof(a) / sizeof(a[0]);
+    sort(a,a+n);
+    for(int i=0; i<n; i++)
+      cout<<a[i]<<" ";
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    {
+        int count=1;
+       while(i<n-1 && a[i]==a[i+1])
+       {
+           i++;
+           count++;
+       }
+       cout<<a[i]<<" : "<<count<<endl;   
+    }
+    
+    return 0;
+}
+------------------------------------------------------------------34.
