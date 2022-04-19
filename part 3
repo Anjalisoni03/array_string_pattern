@@ -1,0 +1,97 @@
+--------------------------------------------len of string.--------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    int i,len=0;
+    char str[30];
+    cout<<" input string: ";
+    gets(str);
+    for(i=0;str[i]!='\0';i++)
+    {
+        len++;
+    }
+    cout<<"length : "<<len;
+    return 0;
+}
+------------------------------------------vowel or consonent------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    char c;
+    cin>>c;
+    if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U')
+        cout<<c<<" is a vowel.";
+    else
+        cout<<c<<" is a consonent";
+    return 0;
+}
+------------------------------------------character is alphabet or not----------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    char c;
+    cin>>c;
+    if(65<=c && c<=90 || 97<=c && c<=122)
+        cout<<c<<" is a alphabet";
+    else
+        cout<<c<<" is not a alphabet";
+    return 0;
+}
+--------------------------------------------------ascii value or char------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    char c;
+    cin>>c;
+    cout<<(int)c;
+    return 0;
+}
+------------------------------------------------ toggle each character------------------------------
+         ex.  abc=ABC
+#include<iostream>
+using namespace std;
+int main()
+{
+    char c[30];
+    gets(c);
+    //string c;
+    //cin>>c;
+    for(int i=0;c[i]!='\0';i++)
+    {
+        if(c[i]>=65 && c[i]<=90)
+        {
+            c[i] += 32;
+            cout<<c[i];
+        }
+        else if(c[i]>=97 && c[i]<=122)
+        {
+            c[i] -= 32;
+            cout<<c[i];
+        }
+    }
+    return 0;
+}
+------------------------------------------------count number of vowels-------------------------------
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    int count=0;
+    string c;
+    cin>>c;
+    for(int i=0;c[i]!='\0';i++)
+    {
+        if(c[i]=='a'||c[i]=='e'||c[i]=='i'||c[i]=='o'||c[i]=='u'||c[i]=='A'||c[i]=='E'||c[i]=='I'||c[i]=='O'||c[i]=='U')
+        {
+            count++;
+        }
+    }
+    cout<<c<<" have "<<count<<" vowel.";
+    return 0;
+    -------------------------------------------
+}
