@@ -93,5 +93,29 @@ int main()
     }
     cout<<c<<" have "<<count<<" vowel.";
     return 0;
-    -------------------------------------------
 }
+---------------------------------------------------remove vowels-------------------------------------------------
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str;
+    cin>>str;
+    int n=str.size();
+    for(int i=0;i<n;i++)
+    {
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
+        {
+            for(int j=i;j<n;j++)
+            {
+                str[j]=str[j+1];
+            }
+            n--;
+            i--;
+        }
+    }
+    cout<<str;
+    return 0;
+}
+-----------------------------------------------
