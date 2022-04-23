@@ -118,4 +118,135 @@ int main()
     cout<<str;
     return 0;
 }
------------------------------------------------
+----------------------------------------------------string is palindrome or not-----------------------
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int n=s.size();
+    int i=0,j=n-1,count=0;
+    //bool flag=true;
+    while(i<=j)
+    {
+        if(s[i++]==s[j--])
+        {
+            continue;
+        }
+        else
+        {
+           count++;//flag=false;
+           break;
+        }
+    }
+    if(count<=0) //flag==true
+    {
+        cout<<"Pal";
+    }
+    else{
+        cout<<"np";
+    }
+}
+--------------------------------------------reverse of string---------------------------
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int n=s.size(),i=n-1;
+    while(i>=0)
+    {
+        cout<<s[i];
+        i--;
+    }
+}
+----------------------------------------------------remove all characters except alphabet---------------
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int n=s.size(),i=0;
+    for(i=0;i<n;i++)
+    {
+        if(65<=s[i] && s[i]<=90 || 97<=s[i] && s[i]<=122)
+        {
+            continue;
+        }
+        else
+        {
+            for(int j=i;j<n;j++)
+            {
+                s[j]=s[j+1];
+            }
+            i--;
+            n--;
+        }
+    }
+    cout<<s;
+}
+-------------------------------------------remove spaces-----------------------
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+    char s[]="prep insta gr a m";
+    int i=0,j=0;
+    while(s[i])
+    {
+        if(s[i]!=' ')
+        {
+            s[j++]=s[i];
+        }
+        i++;
+    }
+    s[j]='\0';
+    cout<<s;
+    return 0;
+}
+----------------------------------------remove brackets--------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    char expn[]="(a+b)-c*(d)";
+    int i=0;
+    while(expn[i])
+    {
+        if(expn[i]=='(' || expn[i]==')')
+        {
+            for(int j=i;expn[j]!='\0';j++)
+            {
+                expn[j]=expn[j+1];
+            }
+        }
+            i++;
+        }
+    cout<<expn;
+    return 0;
+}
+------------------------------------------adding numbers in a string---------------
+#include<iostream>
+using namespace std;
+int main()
+{
+    char s[]="ab34s12";
+    int sum=0;
+    for(int i=0;s[i]!='\0';i++)
+    {
+        if(s[i]>='0' && s[i]<='9')
+        {
+           sum += s[i]-'0';             // ascii value of 0 is 48 so we subtracted '0' from sum
+        }
+    }
+    cout<<sum;
+    return 0;
+}
+---------------------------------------
