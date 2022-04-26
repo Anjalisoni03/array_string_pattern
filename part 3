@@ -325,4 +325,70 @@ int main()
     }
     return 0;
 }
-------------------------------------------------
+------------------------------------------------anagram or not--------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //string s1="forgeeksgeeks",s2="geeksforgeeks";
+    // sort(s1.begin(),s1.end());
+    // sort(s2.begin(),s2.end());
+    char s1[]="forgeeksgeeks",s2[]="geeksforgeeks";
+    int n1=strlen(s1);
+    int n2=sizeof(s1)/sizeof(s1[0]);
+    
+    sort(s1,s1+n1);
+    sort(s2,s2+n2);
+    bool flag=1;
+    for(int i=0;s1[i]!='\0' && s2[i]!='\0';i++)
+    {
+        if(s1[i]==s2[i])
+            continue;
+        else
+            flag=0;
+    }
+    if(flag==1)
+    {
+        cout<<"anagram";
+    }
+    else
+    {
+        cout<<"not anagram";
+    }
+}
+----------------------------------------------------replace substring from the string----------------------------
+//only applicable for replacing last substring.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char s[100]="anjalisoni",substring[100]="soni", newstring[100]="bhawar";
+    int count=0,k=0,i,j;
+    for(i=0;substring[i]!='\0';i++)
+    {
+        for(j=k;s[j]!='\0';j++)
+        {
+            if(substring[i]==s[j])
+            {
+                count++;
+                k=j;
+                break;
+            }
+            else
+                continue;
+        }
+    }
+    if(count==strlen(substring))
+    {
+        cout<<"substring is found"<<endl;
+        for(int i=0;s[i]!='\0';i++)
+            s[k-count+1+i]=newstring[i];
+        cout<<s;
+    }
+    else
+        cout<<"substring not found";
+}
+
+//for any sybstring replacing
+
